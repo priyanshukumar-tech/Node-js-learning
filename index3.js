@@ -13,6 +13,10 @@ app.get("/home",(req,res)=>{
 
 app.get("/home/page1",(req,res)=>{
     console.log(req.url)
+    console.log(req.method)
+    console.log(req.body)
+    console.log(req.header)
+
     res.send("Response from server for /home/page1")
 })
 app.listen(8080,()=>{
