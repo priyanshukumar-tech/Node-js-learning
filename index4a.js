@@ -36,7 +36,7 @@
 import express from 'express';
 const app=express();
 
-app.get('/:a/:b/:c/:d',(req,res)=>{
+app.get('/:a/:b/:c/:d',(req,res)=>{  // if u write any thing like a/f/g/h or any aplha it will print hello world
     res.send("Hello Student");
 
 })
