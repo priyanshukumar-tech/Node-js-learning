@@ -9,8 +9,7 @@ app.listen((8080),()=>{
 
 let validcode =1234;
 const auth=(req,res,next)=>{
-    const code=Number(req.params.code);
-    if(code===validcode){
+    if(req.url==="/1234"){
         next();        
     }
     else{
@@ -19,7 +18,9 @@ const auth=(req,res,next)=>{
    
 }
 
-app.get("/:code",auth,(req,res)=>{
+app.use(auth);
+
+app.get("/1234",(req,res)=>{
     res.send("Welcome");
     
 })
