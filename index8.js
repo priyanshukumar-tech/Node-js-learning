@@ -30,6 +30,15 @@ app.get('/:id',(req,res)=>{
     }
 })
 
+app.get("/:id",(req,res)=>{
+    const user=users.find(user=>user.id===Number(req.params.id));
+    if(user){
+        
+    }
+})
+
+
+
 app.post('/',(req,res)=>{
     const user=req.body;
     users.push(user);
@@ -37,7 +46,6 @@ app.post('/',(req,res)=>{
 })
 
 app.delete('/:id',(req,res)=>{
-    const userindex=users.find(userindex=>userindex.id==Number(req.params.id));
-    delete users[userindex];
-    res.send("user deleted");
+    users=users.filter(user=>user.id!==Number(req.params.id));
+    res.json(users);
 })
