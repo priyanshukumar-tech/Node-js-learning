@@ -1,10 +1,10 @@
-import { products } from "../models/productModel.js";
-const getProducts = (req, res) => {
-  res.json(products)
+import { users } from "../models/userModel.js";
+const createUser = (req, res) => {
+  res.send("This is post request of user router");
 };
 
-const addProduct = (req, res) => {
-  res.send("This is post request of product router");
+const getUsers = (req, res) => {
+  res.json(users)
 };
 
-export { getProducts, addProduct };
+export { getUsers, createUser };
